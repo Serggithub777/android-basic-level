@@ -69,4 +69,16 @@
         android:layout_height="wrap_content"
         android:text="@string/buttonOne" />
 
+    <Button
+        android:id="@+id/buttonTwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonTwo" />
+
+    <Button
+        android:id="@+id/buttonThree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonThree" />
+
 </LinearLayout>

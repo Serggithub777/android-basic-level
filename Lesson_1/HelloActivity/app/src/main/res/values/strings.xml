@@ -7,4 +7,6 @@
     <string name="editTextEnter">Name</string>
     <string name="textViewHello">HELLO!!!</string>
     <string name="buttonOne">button one</string>
+    <string name="buttonTwo">Button Two</string>
+    <string name="buttonThree">Button Three</string>
 </resources>
