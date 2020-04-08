@@ -12,14 +12,13 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/editInputText"
-            android:layout_width="wrap_content"
+            android:id="@+id/editTextEnter"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@string/editInputText"
-            android:hint="@string/hint_edit_input_text"
-            android:textSize="24sp" />
+            android:text="@string/editTextEnter" />
 
         <Button
             android:id="@+id/buttonGo"
@@ -40,7 +39,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="@string/textViewOut"
+            android:text=""
             android:textSize="24sp" />
 
     </LinearLayout>
