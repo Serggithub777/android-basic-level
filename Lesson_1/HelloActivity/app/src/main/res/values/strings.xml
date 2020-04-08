@@ -5,4 +5,5 @@
     <string name="buttonGo">go</string>
     <string name="textViewOut" />
     <string name="editTextEnter">Name</string>
+    <string name="textViewHello">HELLO!!!</string>
 </resources>
