@@ -1,0 +1,2 @@
+rootProject.name='StateActivity'
+include ':app'
