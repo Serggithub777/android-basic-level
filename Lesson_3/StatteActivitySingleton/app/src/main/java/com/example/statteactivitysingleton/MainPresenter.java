@@ -29,7 +29,7 @@ public final class MainPresenter {
 
     //метод получения единственного экземпляра класса
     //если объекта нет он создает его
-    public MainPresenter getInstance() {
+    public static MainPresenter getInstance() {
         synchronized (syncObj) {
             if (instance == null) {
                 instance = new MainPresenter();
