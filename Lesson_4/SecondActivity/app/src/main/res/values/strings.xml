@@ -6,4 +6,6 @@
     <string name="buttonSecondActivity">to main activity</string>
     <string name="editTextMainActivity" />
     <string name="textviewFromMainActivity" />
+    <string name="textviewFromNameMainActivity" />
+    <string name="textviewIDfromMain" />
 </resources>

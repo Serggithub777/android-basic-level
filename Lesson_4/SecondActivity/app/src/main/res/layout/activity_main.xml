@@ -14,7 +14,7 @@
         android:text="@string/buttonMainActivity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextMainActivity" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextMainActivityName" />
 
     <TextView
         android:id="@+id/textViewMainActivity"
@@ -30,15 +30,26 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonMainActivity" />
 
     <EditText
-        android:id="@+id/editTextMainActivity"
+        android:id="@+id/editTextMainActivityName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="144dp"
+        android:layout_marginTop="36dp"
+        android:autofillHints=""
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/editTextMainActivity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextMainID" />
+
+    <EditText
+        android:id="@+id/editTextMainID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

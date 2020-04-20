@@ -14,7 +14,7 @@
         android:text="@string/buttonSecondActivity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewNmae" />
 
     <TextView
         android:id="@+id/textViewSecondActivity"
@@ -29,13 +29,26 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonSecondActivity" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewNmae"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
-        android:text="@string/textviewFromMainActivity"
+        android:layout_marginTop="88dp"
+        android:text="@string/textviewFromNameMainActivity"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewID" />
+
+    <TextView
+        android:id="@+id/textViewID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:text="@string/textviewIDfromMain"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
