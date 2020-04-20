@@ -31,13 +31,11 @@ public class MainActivity extends AppCompatActivity {
                 smsSend.putExtra("sms_body", smsBody); //прикрепляем тело смс
                 PackageManager packageManager;
                 ComponentName component;
-                ActivityInfo activityInfo = smsSend.resolveActivityInfo(getPackageManager(),smsSend.getFlags());
+                ActivityInfo activityInfo = smsSend.resolveActivityInfo(getPackageManager(), smsSend.getFlags());
                 //запрашиваем информацию по активити может ли система обработать данную активити
                 if (activityInfo != null) {
                     startActivity(smsSend);
                 }
-
-
             }
         });
     }
