@@ -2,6 +2,7 @@ package com.example.secondactivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +15,7 @@ public class SecondActivity extends AppCompatActivity implements Constants{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        Parсel parсel = (Parсel) getIntent().getSerializableExtra(KEY_TEXT);
+        Parсel parсel = (Parсel) getIntent().getSerializableExtra(KEY_PARCEL);
         TextView textViewID = findViewById(R.id.textViewID);
         textViewID.setText(parсel.id);
         TextView textViewName = findViewById(R.id.textViewNmae);
@@ -27,6 +28,9 @@ public class SecondActivity extends AppCompatActivity implements Constants{
             @Override
             public void onClick(View v) {
                 //onBackPressed();
+                Intent intentResult = new Intent(); //создаем интент для отправки результата
+                intentResult.putExtra(KEY_NAME, "HELLO");
+                setResult(RESULT_OK, intentResult);
                 finish();
             }
         });
