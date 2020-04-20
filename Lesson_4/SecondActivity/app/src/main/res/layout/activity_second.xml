@@ -5,5 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SecondActivity">
+    <Button
+        android:id="@+id/buttonSecondActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="112dp"
+        android:text="@string/buttonSecondActivity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/textViewSecondActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:text="@string/textviewSecondActivity"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/buttonSecondActivity"
+        app:layout_constraintStart_toStartOf="@+id/buttonSecondActivity"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSecondActivity" />
 </androidx.constraintlayout.widget.ConstraintLayout>
