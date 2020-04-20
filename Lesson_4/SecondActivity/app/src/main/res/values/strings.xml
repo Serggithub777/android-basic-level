@@ -4,4 +4,6 @@
     <string name="textviewMainActivity">Первая активити</string>
     <string name="textviewSecondActivity">Вторая активити</string>
     <string name="buttonSecondActivity">to main activity</string>
+    <string name="editTextMainActivity" />
+    <string name="textviewFromMainActivity" />
 </resources>
