@@ -2,13 +2,13 @@ package com.example.statteactivitysingleton;
 
 import java.util.Map;
 
-public final class MainPresenter {
+final class MainPresenter {
     //внутреннее поле будет хранить единственный экземпляр класса
 
     private static MainPresenter instance = null;
 
     //поле для синхронизации
-    public static final Object syncObj = new Object();
+    private static final Object syncObj = new Object();
 
     //это счетчик
    private int counter;
