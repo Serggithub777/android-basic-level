@@ -2,7 +2,10 @@ package com.example.sendsms;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ComponentName;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -26,7 +29,14 @@ public class MainActivity extends AppCompatActivity {
                 Intent smsSend = new Intent(Intent.ACTION_SENDTO); //создаем интент с действием ACTION_SENDTO
                 smsSend.setData(Uri.parse("smsto:")); //устанавливаем в интент Uri данные в виде прсинга строки "smsto:"
                 smsSend.putExtra("sms_body", smsBody); //прикрепляем тело смс
-                startActivity(smsSend);
+                PackageManager packageManager;
+                ComponentName component;
+                ActivityInfo activityInfo = smsSend.resolveActivityInfo(getPackageManager(),smsSend.getFlags());
+                //запрашиваем информацию по активити может ли система обработать данную активити
+                if (activityInfo != null) {
+                    startActivity(smsSend);
+                }
+
 
             }
         });
