@@ -24,9 +24,11 @@ public class MainActivity extends AppCompatActivity {
         runEcho.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri = Uri.parse("example://intent");
+               // Uri uri = Uri.parse("example://intent");
+                String uriString = String.format("example://intent/%s", text.getText().toString());
+                Uri uri = Uri.parse(uriString);
                 Intent runEchoIntent = new Intent(Intent.ACTION_VIEW, uri);
-                runEchoIntent.putExtra(KEY_PARAM, text.getText().toString());
+                //runEchoIntent.putExtra(KEY_PARAM, text.getText().toString());
                 startActivity(runEchoIntent);
             }
         });
