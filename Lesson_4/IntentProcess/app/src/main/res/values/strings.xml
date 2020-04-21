@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">IntentProcess</string>
+    <string name="textView">TextView</string>
+    <string name="textViewEcho">Echo:</string>
 </resources>
