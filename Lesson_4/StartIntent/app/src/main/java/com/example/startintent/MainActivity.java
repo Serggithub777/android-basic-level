@@ -3,6 +3,7 @@ package com.example.startintent;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final EditText text = findViewById(R.id.editTextName);
-        Button runEcho = findViewById(R.id.buttonRunEcho);
+        final Button runEcho = findViewById(R.id.buttonRunEcho);
         String str = text.getText().toString();
         Toast.makeText(getApplicationContext(), str, Toast.LENGTH_SHORT).show();
         runEcho.setOnClickListener(new View.OnClickListener() {
@@ -29,7 +30,12 @@ public class MainActivity extends AppCompatActivity {
                 Uri uri = Uri.parse(uriString);
                 Intent runEchoIntent = new Intent(Intent.ACTION_VIEW, uri);
                 //runEchoIntent.putExtra(KEY_PARAM, text.getText().toString());
-                startActivity(runEchoIntent);
+                ActivityInfo activityInfo = runEchoIntent.resolveActivityInfo(getPackageManager(),
+                        runEchoIntent.getFlags());
+                if (activityInfo != null) {
+                    startActivity(runEchoIntent);
+                }
+
             }
         });
     }
