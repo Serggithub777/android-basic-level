@@ -48,6 +48,14 @@ public class MainActivity extends AppCompatActivity {
 
         Button replace3 = findViewById(R.id.buttonReplaceThree);
         replace3.setOnClickListener(new ListenerOnReplace(fragmentThree));
+
+        Button back = findViewById(R.id.buttonBack);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().popBackStack();
+            }
+        });
     }
     private class ListenerOnAdd implements View.OnClickListener{
 
@@ -64,10 +72,15 @@ public class MainActivity extends AppCompatActivity {
 
         // Добавить фрагмент
         private void addFragment(){
+            if (fragment.isAdded()) {
+                return;
+            }
             // Открыть транзакцию
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             // Добавить фрагмент
             fragmentTransaction.add(R.id.fragmentContainer, fragment);
+            //Добавить фрагмент в BackStack
+            fragmentTransaction.addToBackStack("");
             // Закрыть транзакцию
             fragmentTransaction.commit();
         }
@@ -90,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
             FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragmentContainer,fragment​);
+           fragmentTransaction.addToBackStack("");
             fragmentTransaction.commit();
         }
     }
