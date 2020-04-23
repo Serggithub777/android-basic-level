@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Heraldic</string>
+    <string-array name="cities">
+        <item>Москва</item>
+        <item>Санкт-Петербург</item>
+        <item>Екатеринбург</item>
+        <item>Новосибирск</item>
+        <item>Самара</item>
+    </string-array>
+
+    <integer-array name="coatofarms_imgs">
+        <item>@drawable/msc</item><!-- герб Москвы -->
+        <item>@drawable/spb</item><!-- герб Санкт-Петербурга -->
+        <item>@drawable/ebrg</item><!-- герб Екатеринбурга -->
+        <item>@drawable/nsk</item><!-- герб Новосибирска -->
+        <item>@drawable/sam</item><!-- герб Самары -->
+    </integer-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
