@@ -9,7 +9,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.os.Parcel;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +21,8 @@ import android.widget.TextView;
  */
 public class CitiesFragment extends Fragment {
 
-    private int currentPosition =0; //текущая позиция (выбранный город)
+    public static final String PARCEL = "PARCEL";
+    private Parcel currentParcel; //текущая позиция (выбранный город)
     boolean isExistCoatOfArms; //существует ли место для размещения герба (портрет или ландшафт)
 
     public CitiesFragment() {
@@ -53,16 +53,19 @@ public class CitiesFragment extends Fragment {
         // Если это не первое создание, то восстановим текущую позицию
         if (savedInstanceState != null) {
             // Восстановление текущей позиции.
-            currentPosition = savedInstanceState. getInt("CurrentCity", 0) ;
-        }// Если можно нарисовать рядом герб, то сделаем это
+            currentParcel = (Parcel) savedInstanceState. getSerializable("CurrentCity") ;
+        }else
+            currentParcel = new Parcel(0,getResources().getStringArray(R.array.cities)[0]);
+
+        // Если можно нарисовать рядом герб, то сделаем это
         if (isExistCoatOfArms) {
-            showCoatOfArms() ;
+            showCoatOfArms(currentParcel) ;
         }
     }
     // Сохраним текущую позицию (вызывается перед выходом из фрагмента)
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
-        outState. putInt("CurrentCity", currentPosition) ;
+        outState. putSerializable("CurrentCity",currentParcel); ;
         super. onSaveInstanceState(outState) ;
     }
     private void initList(@NonNull LinearLayout view) {
@@ -85,22 +88,22 @@ public class CitiesFragment extends Fragment {
             textView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    currentPosition=fi;
-                    showCoatOfArms();
+                    currentParcel = new Parcel(fi, getResources().getStringArray(R.array.cities)[fi]);
+                    showCoatOfArms(currentParcel);
 
                 }
             });
         }
     }
 
-    private void showCoatOfArms() {
+    private void showCoatOfArms(Parcel parcel) {
         // Проверим, что фрагмент с гербом существует в activity
         if (isExistCoatOfArms) {
             CoatOfArmsFragment detail = (CoatOfArmsFragment)
                     getFragmentManager() . findFragmentById(R. id. coat_of_arms) ;
-            if (detail == null || detail.getIndex() != currentPosition) {
+            if (detail == null || detail.getIndex() != parcel.getImageIndex()) {
 // Создаем новый фрагмент с текущей позицией для вывода герба
-                detail = CoatOfArmsFragment. create(currentPosition) ;
+                detail = CoatOfArmsFragment. create(parcel ) ;
 // Выполняем транзакцию по замене фрагмента
                 FragmentTransaction ft = getFragmentManager() . beginTransaction() ;
                 ft. replace(R. id. coat_of_arms, detail) ; // замена фрагмента
@@ -112,7 +115,7 @@ public class CitiesFragment extends Fragment {
             Intent intent = new Intent() ;
             intent. setClass(getActivity() , CoatOfArmsActivity. class) ;
 // и передадим туда параметры
-            intent. putExtra("index", currentPosition) ;
+            intent. putExtra(PARCEL, parcel) ;
             startActivity(intent) ;
             }
         }
