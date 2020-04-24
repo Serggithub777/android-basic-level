@@ -10,8 +10,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <fragment android:name="com.example.heraldic.CitiesFragment"
+        <fragment
             android:id="@+id/cities"
+            android:name="com.example.heraldic.CitiesFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

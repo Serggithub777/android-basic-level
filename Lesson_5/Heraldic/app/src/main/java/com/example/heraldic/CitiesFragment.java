@@ -21,9 +21,9 @@ import android.widget.TextView;
  */
 public class CitiesFragment extends Fragment {
 
-    public static final String PARCEL = "PARCEL";
+    private static final String PARCEL = "PARCEL";
     private Parcel currentParcel; //текущая позиция (выбранный город)
-    boolean isExistCoatOfArms; //существует ли место для размещения герба (портрет или ландшафт)
+    private boolean isExistCoatOfArms; //существует ли место для размещения герба (портрет или ландшафт)
 
     public CitiesFragment() {
         // Required empty public constructor
