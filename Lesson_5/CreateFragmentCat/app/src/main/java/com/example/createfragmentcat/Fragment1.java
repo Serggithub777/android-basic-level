@@ -16,6 +16,10 @@ import android.widget.Toast;
 public class Fragment1 extends Fragment {
     private View.OnClickListener buttonsListener;
 
+    public interface OnSelectedButtonListener {
+        void onButtonSelected(int buttonIndex);
+    }
+
     public Fragment1() {
         // Required empty public constructor
     }
@@ -38,12 +42,14 @@ public class Fragment1 extends Fragment {
         return rootView;
     }
 
-    private void createButtonListener() {
+     private void createButtonListener() {
         buttonsListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int buttonIndex = translateIdToIndex(v.getId());
                 Toast.makeText(getActivity(),String.valueOf(buttonIndex) , Toast.LENGTH_SHORT).show();
+                OnSelectedButtonListener listener = (OnSelectedButtonListener) getActivity();
+                listener.onButtonSelected(buttonIndex);
             }
         };
     }
