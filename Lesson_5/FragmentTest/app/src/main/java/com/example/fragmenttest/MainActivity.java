@@ -40,6 +40,16 @@ public class MainActivity extends AppCompatActivity implements FirstFragment.onS
            /*Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
             intent.putExtra("SMS", bodySms);
             startActivity(intent);*/
+            secondFragment = new SecondFragment();
+            FragmentTransaction ft = fm.beginTransaction();
+            //Подготовим аргументы для отсылки в second fragment
+            Bundle args = new Bundle();
+            args.putString(SecondFragment.SMA_BODY, bodySms);
+            secondFragment.setArguments(args);
+
+            ft.replace(R.id.container, secondFragment, "second_fragment");
+            ft.addToBackStack(null);
+            ft.commit();
         }else{
             secondFragment = (SecondFragment) fm.findFragmentById(R.id.fragmentSecond);
             secondFragment.setTextSmsBody(bodySms);

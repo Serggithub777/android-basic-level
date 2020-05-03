@@ -17,6 +17,11 @@ public class Fragment2 extends Fragment {
     private TextView mInfoTextView;
     private ImageView mCatImageView;
     private String[] mCatDescriptionArray;
+    //имя для аргумента
+    public static final String BUTTON_INDEX = "button_index";
+    //значение по умолчанию
+    private static  final int BUTTON_INDEX_DEFAULT = -1;
+
 
     public Fragment2() {
         // Required empty public constructor
@@ -32,6 +37,11 @@ public class Fragment2 extends Fragment {
         //загружаем массив из ресурсоов
         mCatDescriptionArray = getResources().getStringArray(R.array.cats);
 
+        Bundle args = getArguments();
+        int buttonIndex = args != null ? args.getInt(BUTTON_INDEX, BUTTON_INDEX_DEFAULT) : BUTTON_INDEX_DEFAULT;
+        if (buttonIndex != BUTTON_INDEX_DEFAULT) {
+            setDescription(buttonIndex);
+        }
         return rootView;
         }
 
