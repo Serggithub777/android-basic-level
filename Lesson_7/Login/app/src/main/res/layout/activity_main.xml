@@ -6,38 +6,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.login.MainActivity">
+
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/loginName"
+        android:id="@+id/loginNameLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/inputLoginName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/loginName"
-            android:inputType="textPersonName"/>
+            android:inputType="textPersonName" />
     </android.support.design.widget.TextInputLayout>
+
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/textInputLayout"
+        android:id="@+id/passwordInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="84dp"
+        android:layout_marginEnd="8dp"
+        app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/inputPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/password"
             android:inputType="textPassword" />
-        </android.support.design.widget.TextInputLayout>
+    </android.support.design.widget.TextInputLayout>
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
