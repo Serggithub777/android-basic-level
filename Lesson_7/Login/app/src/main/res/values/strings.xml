@@ -4,4 +4,6 @@
     <string name="password">Enter Password</string>
     <string name="ok">ok</string>
     <string name="Cancel">Cancel</string>
+    <string name="dazrk_theme">Dark Theme</string>
+    <string name="Settings">settings</string>
 </resources>

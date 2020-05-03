@@ -2,14 +2,22 @@ package com.example.login;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.regex.Pattern;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
+
+    private static final int SETTING_CODE = 88;
+
     private TextInputEditText loginInputEditText;
     private TextInputEditText passwordInputEditText;
     private TextInputLayout loginLayout;
@@ -24,6 +32,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button setting = findViewById(R.id.buttonSettings) ;
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,
+                        SettingActivity.class) ;
+                startActivityForResult(intent, SETTING_CODE) ;
+            }
+        } ) ;
 
         loginInputEditText = findViewById(R.id.inputLoginName);
         passwordInputEditText = findViewById(R.id.inputPassword);
@@ -66,4 +84,15 @@ public class MainActivity extends AppCompatActivity {
     private void showError(TextInputLayout textInputLayout, String message) {
         textInputLayout.setError(message);
     }
-}
+    @
+            Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable
+            Intent data) {
+        super. onActivityResult(requestCode, resultCode, data) ;
+        if (requestCode == SETTING_CODE) {
+                recreate() ;
+            }
+
+        }
+    }
+
