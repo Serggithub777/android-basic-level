@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SendSMS</string>
+    <string name="editTextEnterSMS">Name</string>
+    <string name="buttonSend">Send</string>
+</resources>

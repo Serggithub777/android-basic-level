@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CreateFragmentCat</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="cats">
+        <item>Просто кот</item>
+        <item>Рыжик - рыжий кот</item>
+        <item>Барсик болеет за Барселону</item>
+        <item>Мурзик выписывает Мурзилку</item>
+    </string-array>
+</resources>

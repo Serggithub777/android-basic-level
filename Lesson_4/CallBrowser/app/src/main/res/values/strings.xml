@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CallBrowser</string>
+    <string name="textViewEnterSearch">http://ya.ru/</string>
+    <string name="buttonSearch">Open</string>
+</resources>

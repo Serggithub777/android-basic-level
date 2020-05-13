@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">StateActivityEditText</string>
+    <string name="buttonPlus">buttonPlus</string>
+    <string name="textviewCounter">textviewCounter</string>
+</resources>

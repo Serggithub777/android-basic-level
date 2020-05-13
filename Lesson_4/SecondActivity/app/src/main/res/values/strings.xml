@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SecondActivity</string>
+    <string name="buttonMainActivity">to second activity</string>
+    <string name="textviewMainActivity">Первая активити</string>
+    <string name="textviewSecondActivity">Вторая активити</string>
+    <string name="buttonSecondActivity">to main activity</string>
+    <string name="editTextMainActivity" />
+    <string name="textviewFromMainActivity" />
+    <string name="textviewFromNameMainActivity" />
+    <string name="textviewIDfromMain" />
+</resources>

@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">FragmentManager</string>
+    <string name="textviewOne">1</string>
+    <string name="buttonAddOne">ADD 1</string>
+    <string name="buttonReplaceOne">Replace 1</string>
+    <string name="buttonRemoveOne">Remove 1</string>
+    <string name="textviewTwo">2</string>
+    <string name="buttonAddTwo">Add 2</string>
+    <string name="buttonReplaceTwo">Replace 2</string>
+    <string name="buttonRemoveTwo">Remove 2</string>
+    <string name="textviewThree">3</string>
+    <string name="buttonAddThree">Add 3</string>
+    <string name="buttonReplaceThree">Replace 3</string>
+    <string name="buttonRemoveThree">Remove 3</string>
+    <string name="fragment1">Фрагмент1</string>
+    <string name="fragment2">Фрагмент2</string>
+    <string name="fragment3">Фрагмент3</string>
+    <string name="back">Back</string>
+    <string name="back_stack">Back stack</string>
+    <string name="buttonBack">BackStack</string>
+
+</resources>
